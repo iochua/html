@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Header Completo con Submenú</title>
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #2c3e50;
+      padding: 10px 20px;
+      color: white;
+    }
+ 
+  </style>
+</head>
+<body>
+
+  <!-- Header con logo, nav, submenú y buscador -->
+  <header>
+    <div class="logo">🌐 MiLogo</div>
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Blog</a></li>
+        <li>
+          <a href="#">Proyectos ▾</a>
+          <ul>
+            <li><a href="#">Web</a></li>
+            <li><a href="#">Móvil</a></li>
+            <li><a href="#">IA</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="search">
+      <input type="text" placeholder="Buscar...">
+    </div>
+  </header>
+
+  <main>
+    <h2>Ejemplo de uso práctico</h2>
+    <p>Este header combina un logo, un menú de navegación con submenú y un buscador.</p>
+  </main>
+
+</body>
+</html>

@@ -15,15 +15,59 @@ h1{
     color:darkblue;
     font-size: 80px;
 }
+h3{
+    float: left;
+    margin-top: 2px;
+    margin-left: 4px;
+    font-size: 10px;
+    color: white;
+}
+h6{
+    float: right;
+    margin-top: 2px;
+    margin-right: 4px;
+    font-size: 10px;
+    color:white;
+}
+h4{
+    clear:both;
+    float: center;
+    text-align: center;
+    font-size: 30px;
+    color:white;
+
+}
+h5{
+    text-align: center;
+    font-size: 12px;  
+    color:white;
+}
+
+.negro h3{
+    color:black;
+}
+.negro h4{
+    color:black;
+}
+.negro h5{
+    color:black;
+}
+.negro h6{
+    color:black;
+}
+
 
 .tabla {
     width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
+    margin-left: 320px;
 }   
+.tabla-inferior{
+    margin-left: 476px;
+    clear: left;
+    margin-top: 20px;
+}
 /* Configuración matemática de las celdas usando Modelo de Cajas y float */
-/* Ancho total ocupado por celda: 70px + 1px + 1px = 72px */
+/* Ancho total ocupado por celda: 70px + 4px + 4px = 72px */
 .elemento {
     width: 70px;
     height: 70px;
@@ -35,67 +79,71 @@ h1{
 .inicio-fila {
     clear: left;
 }
-
-/* Saltos de espacios calculados con margin-left (Columnas vacías * 72px) */
-/* 16 celdas vacías entre H y He: 16 * 72 = 1152px */
-.salto-16 {
-    margin-left: 1472px;
+.inicio-fila-inferior {
+    clear: left;
+    margin-top: 20px;
+    margin-left: 476px;
+}
+.inicio-fila-inferior2 {
+    clear: left;
+    margin-left: 476px;
 }
 
-/* 10 celdas vacías en filas 2 y 3: 10 * 72 = 720px */
+/* Saltos de espacios calculados con margin-left (Columnas vacías * 72px) */
+/* 16 celdas vacías entre H y He: 16 * 78 = 1152px */
+.salto-16 {
+    margin-left: 1250px;
+}
+
+/* 10 celdas vacías en filas 2 y 3: 10 * 78 = 720px */
 .salto-10 {
-    margin-left: 920px;
+    margin-left: 783px;
 }
 
 /* Desplazamiento para centrar lantánidos/actínidos dejando margen arriba */
-.salto-inferior {
-    margin-left: 3000px;
-    margin-top: 30px;
-    clear: left;
-}
 
-.salto-inferior-actinidos {
-    margin-left: 216px;
+.salto-inferior {
+    margin-left: 4px;
     clear: left;
 }
 
 /* Paleta de colores exacta extraída de la imagen de referencia */
 .naranja {
-    background-color: #f39c12;
+    background-color: #F38D25;
 }
 
 .verde-oscuro {
-    background-color: #27ae60;
+    background-color: #00854A;
 }
 
 .azul-oscuro {
-    background-color: #2980b9;
+    background-color: #073563;
 }
 
 .amarillo {
-    background-color: #f1c40f;
+    background-color: #FDC613;
 }
 
 .rosa {
-    background-color: #e74c3c;
+    background-color: #ED2049;
 }
 
 .verde-claro {
-    background-color: #2ecc71;
+    background-color: #9fb113;
 }
 
 .morado {
-    background-color: #8e44ad;
+    background-color: #8D2B8A;
 }
 
 .azul-claro {
-    background-color: #3498db;
+    background-color: #0087cc;
 }
 
 .verde-oliva {
-    background-color: #a4b000;
+    background-color: #cad48f;
 }
 
 .verde-azulado {
-    background-color: #16a085;
+    background-color: #66a485;
 }
