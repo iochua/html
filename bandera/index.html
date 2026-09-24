@@ -16,6 +16,12 @@
                 border-top-left-radius: 20px;
                 border-bottom-left-radius: 20px;
                 padding: 20px;
+                position: relative;  
+                /* relativo: deja hueco en la direccion a la que se mueve, 
+                absolute: se desplaza respecto a su contenedor más cercano, 
+                fixed: se fija al scroll en la posicion en la que se encuentra */
+                left: 200px; /*orientacion horizontal*/
+                /* top: 200px; orientacion vertical*/
             }
             
             .blanco {
@@ -35,11 +41,20 @@
                 border-top-right-radius: 20px;
                 border-bottom-right-radius: 20px;
             }
+
+            img {
+                width: 100px;
+                height: 100px;
+                position: relative;
+                top: 200px;
+                left: 200px;
+            }
         </style>
     </head>
     <body>
         <div class="verde">HOLI</div>
         <div class="blanco"></div>
         <div class="rojo"></div>
+        <img src="imagenes/escudo.jpg">
     </body>
 </html>
