@@ -1,0 +1,101 @@
+/* Carga estricta de tipografía local según requerimiento 2.D */
+@font-face {
+    font-family: 'fuente';
+    src: url('../fonts/fuente.ttf') format('truetype');
+}
+
+/* Reset y aplicación global de la fuente local */
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: 'fuente';
+}
+h1{
+    text-align: center;
+    margin-top: 50px;
+    color:darkblue;
+    font-size: 80px;
+}
+
+.tabla {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}   
+/* Configuración matemática de las celdas usando Modelo de Cajas y float */
+/* Ancho total ocupado por celda: 70px + 1px + 1px = 72px */
+.elemento {
+    width: 70px;
+    height: 70px;
+    margin: 4px;
+    float: left;
+}
+
+/* Control de flujo estricto con clear */
+.inicio-fila {
+    clear: left;
+}
+
+/* Saltos de espacios calculados con margin-left (Columnas vacías * 72px) */
+/* 16 celdas vacías entre H y He: 16 * 72 = 1152px */
+.salto-16 {
+    margin-left: 1472px;
+}
+
+/* 10 celdas vacías en filas 2 y 3: 10 * 72 = 720px */
+.salto-10 {
+    margin-left: 920px;
+}
+
+/* Desplazamiento para centrar lantánidos/actínidos dejando margen arriba */
+.salto-inferior {
+    margin-left: 3000px;
+    margin-top: 30px;
+    clear: left;
+}
+
+.salto-inferior-actinidos {
+    margin-left: 216px;
+    clear: left;
+}
+
+/* Paleta de colores exacta extraída de la imagen de referencia */
+.naranja {
+    background-color: #f39c12;
+}
+
+.verde-oscuro {
+    background-color: #27ae60;
+}
+
+.azul-oscuro {
+    background-color: #2980b9;
+}
+
+.amarillo {
+    background-color: #f1c40f;
+}
+
+.rosa {
+    background-color: #e74c3c;
+}
+
+.verde-claro {
+    background-color: #2ecc71;
+}
+
+.morado {
+    background-color: #8e44ad;
+}
+
+.azul-claro {
+    background-color: #3498db;
+}
+
+.verde-oliva {
+    background-color: #a4b000;
+}
+
+.verde-azulado {
+    background-color: #16a085;
+}
