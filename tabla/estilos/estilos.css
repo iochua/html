@@ -1,10 +1,8 @@
-/* Carga estricta de tipografía local según requerimiento 2.D */
 @font-face {
     font-family: 'fuente';
     src: url('../fonts/fuente.ttf') format('truetype');
 }
 
-/* Reset y aplicación global de la fuente local */
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
     font-family: 'fuente';
@@ -39,7 +37,7 @@ h4{
 }
 h5{
     text-align: center;
-    font-size: 12px;  
+    font-size: 10px;  
     color:white;
 }
 
@@ -58,16 +56,14 @@ h5{
 
 
 .tabla {
-    width: 100%;
-    margin-left: 320px;
+    padding-top: 30px;
+    margin-left: 250px;
 }   
 .tabla-inferior{
-    margin-left: 476px;
+    margin-left: 406px;
     clear: left;
-    margin-top: 20px;
 }
-/* Configuración matemática de las celdas usando Modelo de Cajas y float */
-/* Ancho total ocupado por celda: 70px + 4px + 4px = 72px */
+
 .elemento {
     width: 70px;
     height: 70px;
@@ -75,75 +71,55 @@ h5{
     float: left;
 }
 
-/* Control de flujo estricto con clear */
 .inicio-fila {
     clear: left;
 }
 .inicio-fila-inferior {
     clear: left;
-    margin-top: 20px;
-    margin-left: 476px;
-}
-.inicio-fila-inferior2 {
-    clear: left;
-    margin-left: 476px;
+    padding-top: 30px;
+    margin-left: 406px;
 }
 
-/* Saltos de espacios calculados con margin-left (Columnas vacías * 72px) */
-/* 16 celdas vacías entre H y He: 16 * 78 = 1152px */
 .salto-16 {
     margin-left: 1250px;
 }
-
-/* 10 celdas vacías en filas 2 y 3: 10 * 78 = 720px */
 .salto-10 {
     margin-left: 783px;
 }
-
-/* Desplazamiento para centrar lantánidos/actínidos dejando margen arriba */
 
 .salto-inferior {
     margin-left: 4px;
     clear: left;
 }
 
-/* Paleta de colores exacta extraída de la imagen de referencia */
-.naranja {
+
+.no-metales {
     background-color: #F38D25;
 }
-
-.verde-oscuro {
+.gases-nobles {
     background-color: #00854A;
 }
-
-.azul-oscuro {
+.metales-alcalinos {
     background-color: #073563;
 }
-
-.amarillo {
+.alcalinoterreos {
     background-color: #FDC613;
 }
-
-.rosa {
+.metaloides {
     background-color: #ED2049;
 }
-
-.verde-claro {
+.halogenos {
     background-color: #9fb113;
 }
-
-.morado {
+.otros-metales {
     background-color: #8D2B8A;
 }
-
-.azul-claro {
+.metales-de-transicion {
     background-color: #0087cc;
 }
-
-.verde-oliva {
+.lantanidos {
     background-color: #cad48f;
 }
-
-.verde-azulado {
+.actinidos {
     background-color: #66a485;
 }
