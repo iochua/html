@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480" role="img" aria-label="Imagen de relleno">
+  <defs><linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFC9CF"/><stop offset="1" stop-color="#FFF1F2"/></linearGradient></defs>
+  <rect width="480" height="480" fill="url(#cielo)"/>
+  <g fill="#ffffff"><rect x="90" y="110" width="170" height="60" rx="30"/><circle cx="150" cy="105" r="42"/><circle cx="205" cy="120" r="30"/></g>
+  <path d="M0 400 C80 330 170 310 260 360 C330 395 400 350 480 380 L480 480 L0 480 Z" fill="#C5E084"/>
+  <path d="M0 440 C90 380 200 390 290 430 C370 460 430 420 480 430 L480 480 L0 480 Z" fill="#87A300"/>
+</svg>
