@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480" role="img" aria-label="Imagen de relleno">
-  <defs><linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFC9CF"/><stop offset="1" stop-color="#FFF1F2"/></linearGradient></defs>
-  <rect width="480" height="480" fill="url(#cielo)"/>
-  <g fill="#ffffff"><rect x="90" y="110" width="170" height="60" rx="30"/><circle cx="150" cy="105" r="42"/><circle cx="205" cy="120" r="30"/></g>
-  <path d="M0 400 C80 330 170 310 260 360 C330 395 400 350 480 380 L480 480 L0 480 Z" fill="#C5E084"/>
-  <path d="M0 440 C90 380 200 390 290 430 C370 460 430 420 480 430 L480 480 L0 480 Z" fill="#87A300"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480" role="img" aria-label="Torre Avengers">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d4ed8"/><stop offset="1" stop-color="#dc2626"/></linearGradient></defs>
+  <rect width="480" height="480" fill="url(#g)"/>
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4"><circle cx="240" cy="190" r="70"/><path d="M130 330c0-60 50-90 110-90s110 30 110 90z"/></g>
+  <text x="240" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#ffffff">Torre Avengers</text>
+  <text x="240" y="435" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#ffffff" fill-opacity="0.85">Marvel</text>
 </svg>

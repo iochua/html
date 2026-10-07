@@ -2,7 +2,7 @@
    GeekZone - hoja de estilos principal
    Contenido:
    1. Fuentes
-   2. Variables de color (tema claro y oscuro)
+   2. Variables de color (tema oscuro)
    3. Base
    4. Encabezado
    5. Botones y etiquetas
@@ -21,12 +21,6 @@
     font-display: swap;
 }
 @font-face {
-    font-family: 'anton';
-    src: url('../fonts/anton-400.woff2') format('woff2');
-    font-weight: 400;
-    font-display: swap;
-}
-@font-face {
     font-family: 'inter';
     src: url('../fonts/inter-400.woff2') format('woff2');
     font-weight: 400;
@@ -40,39 +34,24 @@
 }
 
 /* ---------- 2. Variables de color ---------- */
-/* Tema claro (por defecto, como el diseno de Canva) */
 :root {
-    --fondo: #F7F6FB;
-    --tarjeta: #FFFFFF;
-    --borde: #E2E0F0;
-    --texto: #1A1B2E;
-    --texto-suave: #6B6E8F;
-    --violeta-texto: #5B2FBF;
-    --encabezado: #6B35C0;
-    --pie: #EFEBFA;
-    --primario: #7C3AED;
-    --cta: #FFC400;
-    --cta-texto: #111111;
-    --etiqueta: #FF3B5C;
-    --acento: #22D3EE;
-    --exito: #22C55E;
-    --sombra: 0 6px 20px rgba(124, 58, 237, 0.12);
-    --sombra-fuerte: 0 10px 28px rgba(124, 58, 237, 0.25);
-    --radio: 12px;
-}
-
-/* Tema oscuro: se activa con la casilla #interruptor-tema (sin JavaScript) */
-:root:has(#interruptor-tema:checked) {
     --fondo: #0F1020;
     --tarjeta: #1A1B2E;
     --borde: #2E3050;
     --texto: #F5F5FA;
     --texto-suave: #A0A3BD;
     --violeta-texto: #A78BFA;
-    --encabezado: #2B1A66;
+    --encabezado: #6D28D9;
     --pie: #15162A;
+    --primario: #7C3AED;
+    --cta: #FFC400;
+    --cta-texto: #111111;
+    --etiqueta: #FF3B5C;
+    --acento: #22D3EE;
+    --exito: #22C55E;
     --sombra: 0 6px 20px rgba(124, 58, 237, 0.3);
     --sombra-fuerte: 0 10px 28px rgba(124, 58, 237, 0.5);
+    --radio: 12px;
 }
 
 /* ---------- 3. Base ---------- */
@@ -92,19 +71,17 @@ h1, h2, h3, p, ul, dl, dd, figure, fieldset {
     padding: 0;
 }
 h1, h2, h3 {
-    font-family: 'anton', 'inter', sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.5px;
+    font-weight: 600;
 }
 h1 {
-    font-size: 44px;
-    line-height: 1.1;
+    font-size: 40px;
+    line-height: 1.15;
 }
 h2 {
-    font-size: 30px;
+    font-size: 26px;
 }
 h3 {
-    font-size: 22px;
+    font-size: 19px;
     line-height: 1.2;
 }
 ul {
@@ -168,7 +145,7 @@ svg {
     z-index: 10;
     background-color: var(--encabezado);
     color: #FFFFFF;
-    box-shadow: 0 4px 16px rgba(91, 47, 191, 0.3);
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.45);
 }
 .encabezado-contenido {
     display: flex;
@@ -206,7 +183,6 @@ svg {
 }
 .buscador input:focus {
     outline: none;
-    border-color: var(--acento);
 }
 .buscador button {
     padding: 0 16px;
@@ -215,11 +191,7 @@ svg {
     border: 2px solid transparent;
     border-left: none;
     border-radius: 0 12px 12px 0;
-    cursor: pointer;
-    transition: color 0.2s;
-}
-.buscador button:hover {
-    color: var(--primario);
+    cursor: default;
 }
 .menu ul {
     display: flex;
@@ -231,20 +203,26 @@ svg {
     opacity: 0.7;
 }
 .menu a {
+    position: relative;
     padding: 6px 8px;
     border-radius: 8px;
-    font-family: 'anton', 'inter', sans-serif;
+    font-weight: 600;
     font-size: 17px;
-    letter-spacing: 0.5px;
     transition: background-color 0.2s, color 0.2s;
 }
 .menu a:hover {
     background-color: rgba(255, 255, 255, 0.18);
     color: var(--cta);
 }
-.menu a[aria-current="page"] {
-    border-bottom: 3px solid var(--cta);
-    border-radius: 0;
+.menu a[aria-current="page"]::after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: 0;
+    height: 3px;
+    background-color: var(--cta);
+    border-radius: 3px;
 }
 .acciones {
     display: flex;
@@ -252,20 +230,22 @@ svg {
     gap: 16px;
 }
 .acciones a,
-.interruptor {
+.cuenta {
     position: relative;
     display: flex;
     padding: 8px;
     border-radius: 12px;
     transition: background-color 0.2s, color 0.2s;
 }
-.acciones a:hover,
-.interruptor:hover {
+.acciones a:hover {
     background-color: rgba(255, 255, 255, 0.18);
     color: var(--cta);
 }
-.interruptor {
-    cursor: pointer;
+.cuenta {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: default;
 }
 .contador {
     position: absolute;
@@ -280,19 +260,6 @@ svg {
     font-weight: 600;
     text-align: center;
     line-height: 20px;
-}
-.icono-sol {
-    display: none;
-}
-:root:has(#interruptor-tema:checked) .icono-sol {
-    display: block;
-}
-:root:has(#interruptor-tema:checked) .icono-luna {
-    display: none;
-}
-#interruptor-tema:focus-visible ~ .encabezado .interruptor {
-    outline: 2px solid var(--acento);
-    outline-offset: 2px;
 }
 
 /* ---------- 5. Botones y etiquetas ---------- */
@@ -358,7 +325,7 @@ svg {
 .banner h1 {
     margin-bottom: 16px;
     color: #5B2FBF;
-    font-size: 54px;
+    font-size: 44px;
 }
 .banner p {
     margin-bottom: 24px;
@@ -396,7 +363,7 @@ svg {
 }
 .tarjeta-categoria h3 {
     margin-bottom: 8px;
-    font-size: 26px;
+    font-size: 21px;
 }
 .tarjeta-categoria p {
     margin-bottom: 8px;
@@ -475,6 +442,9 @@ svg {
     color: var(--violeta-texto);
 }
 .filtros input {
+    scroll-margin-top: 140px;
+}
+.filtros input {
     flex-shrink: 0;
     width: 22px;
     height: 22px;
@@ -499,7 +469,9 @@ svg {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E");
     border-color: var(--primario);
 }
-.filtros input[type="radio"]:checked {
+.filtros input[type="radio"]:checked,
+.filtros:not(:has(input[name="tipo"]:checked)) .filtro-tipo:target,
+.filtros:not(:has(input[name="tipo"]:checked)):not(:has(.filtro-tipo:target)) #tipo-todos {
     border-color: var(--primario);
     box-shadow: inset 0 0 0 4px var(--tarjeta), inset 0 0 0 11px var(--primario);
 }
@@ -529,7 +501,7 @@ svg {
     grid-template-columns: 150px 1fr;
     align-items: center;
     gap: 20px;
-    padding: 28px 20px 20px;
+    padding: 20px;
     background-color: var(--tarjeta);
     border-radius: var(--radio);
     box-shadow: var(--sombra);
@@ -539,22 +511,18 @@ svg {
     transform: translateY(-4px);
     box-shadow: var(--sombra-fuerte);
 }
-.producto-foto {
-    position: relative;
-}
 .producto-foto img {
     width: 150px;
     height: 150px;
     object-fit: cover;
     border-radius: 12px;
 }
-.producto-etiquetas {
-    position: absolute;
-    top: -40px;
-    left: 50%;
+.producto-encabezado {
     display: flex;
-    gap: 6px;
-    transform: translateX(-50%);
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 4px;
 }
 .producto-franquicia {
     color: var(--violeta-texto);
@@ -595,21 +563,31 @@ svg {
 .tienda:has(#franquicia-pokemon:checked) .producto.pokemon {
     display: grid;
 }
-/* Tipo de producto: se ocultan los que no coinciden */
+/* Tipo de producto: se ocultan los que no coinciden.
+   Aplica cuando se marca el radio o cuando se llega desde un acceso directo
+   (catalogo.html#tipo-figuras) y todavia no se marco ningun tipo. */
 .tienda:has(#tipo-figuras:checked) .producto:not(.figuras),
 .tienda:has(#tipo-coleccionables:checked) .producto:not(.coleccionables),
-.tienda:has(#tipo-sets-lego:checked) .producto:not(.sets-lego) {
+.tienda:has(#tipo-sets-lego:checked) .producto:not(.sets-lego),
+.tienda:not(:has(input[name="tipo"]:checked)):has(#tipo-figuras:target) .producto:not(.figuras),
+.tienda:not(:has(input[name="tipo"]:checked)):has(#tipo-coleccionables:target) .producto:not(.coleccionables),
+.tienda:not(:has(input[name="tipo"]:checked)):has(#tipo-sets-lego:target) .producto:not(.sets-lego) {
     display: none !important;
 }
 /* Paginacion: solo aplica cuando no hay filtros activos */
-.tienda:has(#pagina-1:checked):not(:has(.filtro:checked)) .producto:not(.pagina-1),
-.tienda:has(#pagina-2:checked):not(:has(.filtro:checked)) .producto:not(.pagina-2),
-.tienda:has(#pagina-3:checked):not(:has(.filtro:checked)) .producto:not(.pagina-3) {
+.tienda:has(#pagina-1:checked):not(:has(.filtro:checked)):not(:has(.filtro-tipo:target)) .producto:not(.pagina-1),
+.tienda:has(#pagina-2:checked):not(:has(.filtro:checked)):not(:has(.filtro-tipo:target)) .producto:not(.pagina-2),
+.tienda:has(#pagina-3:checked):not(:has(.filtro:checked)):not(:has(.filtro-tipo:target)) .producto:not(.pagina-3),
+.tienda:has(#pagina-1:checked):has(#tipo-todos:checked):not(:has(.filtro-franquicia:checked)) .producto:not(.pagina-1),
+.tienda:has(#pagina-2:checked):has(#tipo-todos:checked):not(:has(.filtro-franquicia:checked)) .producto:not(.pagina-2),
+.tienda:has(#pagina-3:checked):has(#tipo-todos:checked):not(:has(.filtro-franquicia:checked)) .producto:not(.pagina-3) {
     display: none;
 }
-.tienda:has(.filtro:checked) .paginacion {
+.tienda:has(.filtro:checked) .paginacion,
+.tienda:has(.filtro-tipo:target):not(:has(#tipo-todos:checked)) .paginacion {
     display: none;
 }
+
 
 .paginacion {
     margin-top: 32px;
@@ -693,7 +671,7 @@ svg {
     border-radius: 12px;
 }
 .item-carrito h3 {
-    font-size: 24px;
+    font-size: 20px;
 }
 .item-carrito-descripcion {
     margin-bottom: 16px;
@@ -791,9 +769,8 @@ svg {
     border-bottom: 1px solid var(--borde);
 }
 .resumen-fila dt {
-    font-family: 'anton', 'inter', sans-serif;
+    font-weight: 600;
     font-size: 18px;
-    letter-spacing: 0.5px;
 }
 .resumen-gratis {
     color: var(--exito);
@@ -807,8 +784,8 @@ svg {
 }
 .resumen-total dd {
     color: var(--violeta-texto);
-    font-family: 'anton', 'inter', sans-serif;
-    font-size: 30px;
+    font-weight: 600;
+    font-size: 26px;
 }
 .resumen .boton-cta {
     display: block;
@@ -828,24 +805,11 @@ svg {
     margin-top: 56px;
     background-color: var(--pie);
 }
-.pie-enlaces {
-    display: flex;
-    justify-content: center;
-    gap: 64px;
-    padding-top: 24px;
-    padding-bottom: 8px;
-    font-family: 'anton', 'inter', sans-serif;
-    font-size: 17px;
-    letter-spacing: 0.5px;
-}
-.pie-enlaces a:hover {
-    color: var(--primario);
-}
 .pie-informacion {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    padding-top: 16px;
+    padding-top: 28px;
     padding-bottom: 24px;
     color: var(--texto-suave);
     font-size: 14px;
@@ -916,10 +880,6 @@ svg {
     }
     .pie-informacion {
         grid-template-columns: 1fr;
-    }
-    .pie-enlaces {
-        flex-wrap: wrap;
-        gap: 12px 32px;
     }
 }
 @media (max-width: 560px) {
