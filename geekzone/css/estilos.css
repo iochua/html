@@ -44,7 +44,8 @@
     --primario: #7C3AED;
     --cta: #FFC400;
     --cta-texto: #111111;
-    --etiqueta: #FF3B5C;
+    --etiqueta-exclusivo: #FF3B5C;
+    --etiqueta-nuevo: #22C55E;
     --acento: #22D3EE;
     --exito: #22C55E;
     --sombra: 0 6px 20px rgba(124, 58, 237, 0.3);
@@ -84,6 +85,9 @@ h3 {
 }
 ul {
     list-style: none;
+}
+.texto-claro {
+    color: var(--texto);
 }
 a {
     color: inherit;
@@ -270,16 +274,27 @@ svg {
     transform: translateY(0);
     box-shadow: none;
 }
-.etiqueta {
+.etiqueta-exclusivo {
     display: inline-block;
     padding: 3px 12px;
-    background-color: var(--etiqueta);
+    background-color: var(--etiqueta-exclusivo);
     color: #FFFFFF;
     border-radius: 12px;
     font-size: 11px;
     font-weight: 600;
     white-space: nowrap;
     box-shadow: 0 3px 8px rgba(255, 59, 92, 0.4);
+}
+.etiqueta-nuevo {
+    display: inline-block;
+    padding: 3px 12px;
+    background-color: var(--etiqueta-nuevo);
+    color: #FFFFFF;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 3px 8px rgba(92, 255, 59, 0.4);
 }
 
 /* ---------- 6. Pagina de inicio ---------- */
@@ -400,7 +415,7 @@ svg {
     border-bottom: 1px solid var(--borde);
 }
 .filtros fieldset + fieldset {
-    margin-bottom: 20px;
+    margin-bottom: 0;
     border-bottom: none;
 }
 .filtros legend {
@@ -454,21 +469,6 @@ svg {
 .filtros input[type="radio"]:checked {
     border-color: var(--primario);
     box-shadow: inset 0 0 0 4px var(--tarjeta), inset 0 0 0 11px var(--primario);
-}
-.limpiar-filtros {
-    display: block;
-    padding: 10px;
-    border: 1px solid var(--borde);
-    border-radius: 12px;
-    color: var(--violeta-texto);
-    font-size: 14px;
-    font-weight: 600;
-    text-align: center;
-    transition: border-color 0.2s, background-color 0.2s;
-}
-.limpiar-filtros:hover {
-    border-color: var(--primario);
-    background-color: var(--fondo);
 }
 
 .lista-productos {

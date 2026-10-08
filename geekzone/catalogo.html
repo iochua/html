@@ -28,7 +28,7 @@
             <div class="acciones">
                 <div class="icono">
                     <svg viewBox="0 0 24 24"><path d="M3 4h2.5l2.2 10.2a1 1 0 0 0 1 .8h8.6a1 1 0 0 0 1-.8L20 8H6.2"/><circle cx="9.5" cy="19" r="1.3"/><circle cx="16.5" cy="19" r="1.3"/></svg>
-                    <span class="contador">3</span>
+                    <span class="contador">0</span>
                 </div>
                 <div class="icono">
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
@@ -54,6 +54,7 @@
                         <li><label><input type="checkbox"> Star Wars</label></li>
                         <li><label><input type="checkbox"> Dragon Ball</label></li>
                         <li><label><input type="checkbox"> Pokémon</label></li>
+                        <li><label><input type="checkbox"> DC Comics</label></li>
                     </ul>
                 </fieldset>
                 <fieldset>
@@ -65,7 +66,6 @@
                         <li><label><input type="radio" name="tipo"> Sets LEGO</label></li>
                     </ul>
                 </fieldset>
-                <a class="limpiar-filtros" href="catalogo.html">Limpiar filtros</a>
             </aside>
 
             <section aria-label="Lista de productos">
@@ -77,7 +77,7 @@
                         <div class="producto-info">
                             <div class="producto-encabezado">
                                 <span class="producto-franquicia">Marvel</span>
-                                <span class="etiqueta">Edición limitada</span>
+                                <span class="etiqueta-exclusivo">Exclusivo</span>
                             </div>
                             <h3>Figura Spider-Man traje integrado 1:6</h3>
                             <p class="producto-descripcion">Más de 30 puntos de articulación, manos intercambiables y base de exhibición.</p>
@@ -92,7 +92,7 @@
                         <div class="producto-info">
                             <div class="producto-encabezado">
                                 <span class="producto-franquicia">Star Wars</span>
-                                <span class="etiqueta">Exclusivo</span>
+                                <span class="etiqueta-exclusivo">Exclusivo</span>
                             </div>
                             <h3>Figura Darth Vader 12 pulgadas</h3>
                             <p class="producto-descripcion">Capa de tela, sable de luz removible y acabados con detalle de batalla.</p>
@@ -136,7 +136,7 @@
                         <div class="producto-info">
                             <div class="producto-encabezado">
                                 <span class="producto-franquicia">Marvel</span>
-                                <span class="etiqueta">Exclusivo</span>
+                                <span class="etiqueta-exclusivo">Exclusivo</span>
                             </div>
                             <h3>Funko Pop Iron Man Mark 85</h3>
                             <p class="producto-descripcion">Versión metálica exclusiva en caja de colección con ventana.</p>
@@ -151,7 +151,7 @@
                         <div class="producto-info">
                             <div class="producto-encabezado">
                                 <span class="producto-franquicia">Star Wars</span>
-                                <span class="etiqueta">Edición limitada</span>
+                                <span class="etiqueta-exclusivo">Exclusivo</span>
                             </div>
                             <h3>Réplica casco de Stormtrooper</h3>
                             <p class="producto-descripcion">Réplica a escala real con visor ajustable y certificado de autenticidad.</p>
@@ -195,7 +195,7 @@
                         <div class="producto-info">
                             <div class="producto-encabezado">
                                 <span class="producto-franquicia">Star Wars</span>
-                                <span class="etiqueta">Exclusivo</span>
+                                <span class="etiqueta-exclusivo">Exclusivo</span>
                             </div>
                             <h3>LEGO Halcón Milenario de colección</h3>
                             <p class="producto-descripcion">Más de 1,300 piezas, cabina desmontable y minifiguras incluidas.</p>
@@ -210,7 +210,7 @@
                         <div class="producto-info">
                             <div class="producto-encabezado">
                                 <span class="producto-franquicia">Marvel</span>
-                                <span class="etiqueta">Edición limitada</span>
+                                <span class="etiqueta-exclusivo">Exclusivo</span>
                             </div>
                             <h3>LEGO Torre de los Vengadores</h3>
                             <p class="producto-descripcion">Seis pisos modulares con interiores detallados y 8 minifiguras.</p>
@@ -220,13 +220,13 @@
                     </li>
                     <li class="producto pagina-3">
                         <div class="producto-foto">
-                            <img src="img/lego-spiderman-moto.png" alt="Set LEGO de Spider-Man en moto" width="480" height="480">
+                            <img src="img/lego-doom-doomsday.png" alt="Set LEGO de Doom" width="480" height="480">
                         </div>
                         <div class="producto-info">
                             <div class="producto-encabezado">
                                 <span class="producto-franquicia">Marvel</span>
                             </div>
-                            <h3>LEGO Spider-Man y su moto</h3>
+                            <h3>LEGO Doom Avengers: Doomsday</h3>
                             <p class="producto-descripcion">Set compacto de 200 piezas ideal para empezar a construir.</p>
                             <p class="producto-precio">$549 <small>MXN</small></p>
                             <button class="boton-cta" type="button">Añadir al carrito</button>
@@ -234,14 +234,15 @@
                     </li>
                     <li class="producto pagina-3">
                         <div class="producto-foto">
-                            <img src="img/lego-caza-xwing.png" alt="Set LEGO del caza X-Wing" width="480" height="480">
+                            <img src="img/figura-batman.png" alt="Figura de Batman con Bati-señal" width="480" height="480">
                         </div>
                         <div class="producto-info">
                             <div class="producto-encabezado">
-                                <span class="producto-franquicia">Star Wars</span>
+                                <span class="producto-franquicia">DC Comics</span>
+                                <span class="etiqueta-nuevo">Nuevo</span>
                             </div>
-                            <h3>LEGO Caza X-Wing</h3>
-                            <p class="producto-descripcion">Alas con mecanismo de apertura, astromecánico R2-D2 y base de exhibición.</p>
+                            <h3>The Batman y Bati-señal</h3>
+                            <p class="producto-descripcion">Figura de The Batman con Bati-señal.</p>
                             <p class="producto-precio">$1,349 <small>MXN</small></p>
                             <button class="boton-cta" type="button">Añadir al carrito</button>
                         </div>
@@ -294,12 +295,12 @@
             </section>
             <section id="contacto">
                 <h2>Contacto</h2>
-                <p>Correo: <a href="mailto:hola@geekzone.mx">hola@geekzone.mx</a><br>
-                Teléfono: 55 1234 5678<br>
-                Lunes a viernes, de 9:00 a 18:00 h</p>
+                <p>Correo: <a href="mailto:geekzone@gmail.com.mx">geekzone@gmail.com.mx</a><br>
+                Teléfono: +52 669 254 4841<br>
+                Lunes a domingo, de 11:30 a 21:00 h</p>
             </section>
         </div>
-        <p class="pie-derechos">© 2026 GeekZone. Prototipo con fines académicos; las marcas mencionadas pertenecen a sus respectivos dueños.</p>
+        <p class="pie-derechos">© 2026 GeekZone. Marca machin registrada.</p>
     </footer>
 </body>
 </html>

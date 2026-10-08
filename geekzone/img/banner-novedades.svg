@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="300" viewBox="0 0 1100 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Imagen de relleno">
-  <defs><linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#BFE6FF"/><stop offset="1" stop-color="#EAF7FF"/></linearGradient></defs>
-  <rect width="1100" height="300" fill="url(#cielo)"/>
-  <g fill="#ffffff"><rect x="560" y="10" width="170" height="56" rx="28"/><rect x="940" y="14" width="80" height="30" rx="15"/><rect x="190" y="8" width="90" height="34" rx="17"/></g>
-  <path d="M0 300 L0 260 C60 200 150 190 230 230 C300 265 330 300 330 300 Z" fill="#87A300"/>
-  <path d="M250 300 C320 230 460 200 640 250 C760 280 900 290 1100 255 L1100 300 Z" fill="#C5E084"/>
-  <path d="M420 300 C500 270 640 270 780 295 L820 300 Z" fill="#87A300"/>
-  <path d="M800 300 C900 215 1020 210 1100 270 L1100 300 Z" fill="#87A300"/>
-</svg>

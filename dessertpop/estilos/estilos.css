@@ -1,0 +1,328 @@
+/* ==========================================================
+   DessertPop - hoja de estilos
+   ========================================================== */
+
+/* ---------- Fuente ---------- */
+@font-face {
+  font-family: 'Chewy';
+  src: url('../fonts/chewy.woff2') format('woff2');
+}
+
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #E76563;
+  font-family: 'Chewy', cursive;
+  font-size: 16px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input {
+  font-family: 'Chewy', cursive;
+}
+
+.contenedor {
+  margin: 0 auto;
+  width: 960px;
+}
+
+.titulo-seccion {
+  font-size: 32px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* ---------- Encabezado: barra superior ---------- */
+.barra-superior {
+  background-color: #E76563;
+}
+
+.barra-contenido {
+  align-items: center;
+  display: flex;
+  height: 72px;
+  justify-content: space-between;
+}
+
+.logo {
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  display: block;
+  height: 50px;
+  object-fit: cover;
+  width: 50px;
+}
+
+/* ---------- Encabezado: buscador ---------- */
+.buscador {
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  display: flex;
+  height: 38px;
+  padding: 0 12px 0 20px;
+  width: 520px;
+}
+
+.buscador input {
+  background-color: #FFFFFF;
+  border: none;
+  color: #E76563;
+  flex: 1;
+  font-size: 18px;
+  outline: none;
+}
+
+.icono-lupa {
+  height: 24px;
+  width: 24px;
+}
+
+/* ---------- Encabezado: iconos ---------- */
+.iconos {
+  display: flex;
+}
+
+.icono-barra {
+  height: 34px;
+  margin-left: 16px;
+  width: 34px;
+}
+
+/* ---------- Encabezado: menu de categorias ---------- */
+.menu-categorias {
+  background-color: #F8CDCB;
+}
+
+.menu-categorias ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu-categorias a {
+  color: #E76563;
+  display: block;
+  font-size: 28px;
+  padding: 14px 22px;
+}
+
+.menu-categorias a:hover {
+  background-color: #F2B2AF;
+}
+
+/* ---------- Inicio: hero ---------- */
+.seccion-hero {
+  background-color: #F8CDCB;
+  padding: 20px 0 40px;
+}
+
+.hero-contenido {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.imagen-hero {
+  border-radius: 28px;
+  display: block;
+  height: 320px;
+  object-fit: cover;
+  width: 500px;
+}
+
+.burbuja-titulo {
+  background-color: #F8F0A3;
+  border-radius: 70px;
+  padding: 36px 30px;
+  text-align: center;
+  width: 410px;
+}
+
+.burbuja-titulo h1 {
+  font-size: 48px;
+  line-height: 56px;
+}
+
+.hero-boton {
+  margin-top: 28px;
+  text-align: center;
+}
+
+.boton-explorar {
+  background-color: #E76563;
+  border-radius: 30px;
+  color: #FFFFFF;
+  display: inline-block;
+  font-size: 26px;
+  padding: 12px 32px;
+}
+
+.boton-explorar:hover {
+  background-color: #D14F4D;
+}
+
+/* ---------- Productos (tarjetas) ---------- */
+.imagen-producto {
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  display: block;
+  height: 150px;
+  object-fit: cover;
+  width: 150px;
+}
+
+.precio {
+  font-size: 24px;
+}
+
+.nombre-producto {
+  font-size: 17px;
+  line-height: 21px;
+}
+
+.boton-carrito {
+  background-color: #9B4B49;
+  border: none;
+  border-radius: 14px;
+  color: #FFFFFF;
+  font-size: 15px;
+  padding: 5px 16px;
+}
+
+.boton-carrito:hover {
+  background-color: #B5605D;
+}
+
+/* ---------- Inicio: productos mas populares ---------- */
+.seccion-populares {
+  background-color: #F8F0A3;
+  padding: 32px 0 36px;
+}
+
+.lista-productos {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tarjeta-producto {
+  width: 170px;
+}
+
+.tarjeta-producto .imagen-producto {
+  margin: 0 auto 12px;
+}
+
+.tarjeta-producto .nombre-producto {
+  height: 63px;
+  margin: 4px 0 10px;
+}
+
+/* ---------- Inicio: mejores marcas ---------- */
+.seccion-marcas {
+  background-color: #F8CDCB;
+  padding: 32px 0 40px;
+}
+
+.lista-marcas {
+  display: flex;
+  justify-content: space-between;
+}
+
+.caja-marca {
+  align-items: center;
+  background-color: #FFFFFF;
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  width: 170px;
+}
+
+.imagen-marca {
+  display: block;
+  height: 44px;
+  object-fit: contain;
+  width: 140px;
+}
+
+/* ---------- Catalogo ---------- */
+.seccion-catalogo {
+  background-color: #F8CDCB;
+  padding: 20px 0 20px;
+}
+
+.columnas-catalogo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.columna-catalogo {
+  width: 450px;
+}
+
+.tarjeta-catalogo {
+  align-items: center;
+  display: flex;
+  height: 170px;
+  margin-bottom: 20px;
+}
+
+.tarjeta-catalogo .imagen-producto {
+  flex-shrink: 0;
+  margin-right: 22px;
+}
+
+.tarjeta-catalogo .precio {
+  font-size: 32px;
+}
+
+.tarjeta-catalogo .nombre-producto {
+  font-size: 19px;
+  line-height: 23px;
+  margin: 2px 0 10px;
+}
+
+/* ---------- Pie de pagina ---------- */
+.pie {
+  background-color: #E76563;
+  color: #FFFFFF;
+  padding: 28px 0 32px;
+}
+
+.pie-contenido {
+  display: flex;
+  justify-content: space-between;
+}
+
+.columna-pie {
+  width: 210px;
+}
+
+.columna-pie h3 {
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 10px;
+}
+
+.columna-pie li {
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.lista-sin-titulo {
+  margin-top: 32px;
+}
