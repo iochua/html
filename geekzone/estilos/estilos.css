@@ -44,10 +44,9 @@
     --primario: #7C3AED;
     --cta: #FFC400;
     --cta-texto: #111111;
-    --etiqueta-exclusivo: #FF3B5C;
-    --etiqueta-nuevo: #22C55E;
+    --exclusivo: #FF3B5C;
+    --nuevo: #22C55E;
     --acento: #22D3EE;
-    --exito: #22C55E;
     --sombra: 0 6px 20px rgba(124, 58, 237, 0.3);
     --sombra-fuerte: 0 10px 28px rgba(124, 58, 237, 0.5);
     --radio: 12px;
@@ -65,7 +64,7 @@ body {
     font-size: 16px;
     line-height: 1.5;
 }
-h1, h2, h3, p, ul, dl, dd, figure, fieldset {
+h1, h2, h3, p, ul {
     margin: 0;
     padding: 0;
 }
@@ -274,7 +273,7 @@ svg {
     transform: translateY(0);
     box-shadow: none;
 }
-.etiqueta-exclusivo {
+.etiqueta{
     display: inline-block;
     padding: 3px 12px;
     background-color: var(--etiqueta-exclusivo);
@@ -283,19 +282,16 @@ svg {
     font-size: 11px;
     font-weight: 600;
     white-space: nowrap;
+}
+.exclusivo{
     box-shadow: 0 3px 8px rgba(255, 59, 92, 0.4);
+    background-color: var(--exclusivo);
 }
-.etiqueta-nuevo {
-    display: inline-block;
-    padding: 3px 12px;
-    background-color: var(--etiqueta-nuevo);
-    color: #FFFFFF;
-    border-radius: 12px;
-    font-size: 11px;
-    font-weight: 600;
-    white-space: nowrap;
+.nuevo{
     box-shadow: 0 3px 8px rgba(92, 255, 59, 0.4);
+    background-color: var(--nuevo);
 }
+
 
 /* ---------- 6. Pagina de inicio ---------- */
 .banner {
@@ -529,63 +525,6 @@ svg {
     font-size: 12px;
     font-weight: 400;
 }
-
-/* Paginacion: solo se muestran los productos de la pagina elegida */
-.tienda:has(#pagina-1:checked) .producto:not(.pagina-1),
-.tienda:has(#pagina-2:checked) .producto:not(.pagina-2),
-.tienda:has(#pagina-3:checked) .producto:not(.pagina-3) {
-    display: none;
-}
-
-
-.paginacion {
-    margin-top: 32px;
-}
-.paginacion ul {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-}
-.paginacion label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: var(--tarjeta);
-    border-radius: 8px;
-    box-shadow: var(--sombra);
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: color 0.2s, transform 0.2s;
-}
-.paginacion label:hover {
-    color: var(--primario);
-    transform: translateY(-2px);
-}
-.paginacion input:checked + label {
-    background-color: var(--primario);
-    color: #FFFFFF;
-}
-.paginacion input:focus-visible + label {
-    outline: 2px solid var(--acento);
-    outline-offset: 2px;
-}
-/* Flechas anterior / siguiente: solo se muestra la que corresponde a la pagina actual */
-.pagina-anterior,
-.pagina-siguiente {
-    display: none !important;
-}
-.tienda:has(#pagina-1:checked) .anterior-1,
-.tienda:has(#pagina-2:checked) .anterior-2,
-.tienda:has(#pagina-3:checked) .anterior-3,
-.tienda:has(#pagina-1:checked) .siguiente-1,
-.tienda:has(#pagina-2:checked) .siguiente-2,
-.tienda:has(#pagina-3:checked) .siguiente-3 {
-    display: flex !important;
-}
-
 /* ---------- 8. Pie de pagina ---------- */
 .pie {
     margin-top: 56px;
