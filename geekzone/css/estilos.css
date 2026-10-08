@@ -397,8 +397,6 @@ svg {
     padding-top: 32px;
 }
 .filtros {
-    position: sticky;
-    top: 112px;
     padding: 28px 24px;
     background-color: var(--tarjeta);
     border-radius: var(--radio);
