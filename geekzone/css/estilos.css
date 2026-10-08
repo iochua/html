@@ -8,9 +8,7 @@
    5. Botones y etiquetas
    6. Pagina de inicio
    7. Catalogo (filtros, productos, paginacion)
-   8. Carrito
-   9. Pie de pagina
-   10. Adaptabilidad
+   8. Pie de pagina
    ========================================================== */
 
 /* ---------- 1. Fuentes ---------- */
@@ -184,14 +182,13 @@ svg {
 .buscador input:focus {
     outline: none;
 }
-.buscador button {
+.lupa {
+    display: flex;
+    align-items: center;
     padding: 0 16px;
     background-color: #FFFFFF;
     color: var(--encabezado);
-    border: 2px solid transparent;
-    border-left: none;
     border-radius: 0 12px 12px 0;
-    cursor: default;
 }
 .menu ul {
     display: flex;
@@ -229,23 +226,11 @@ svg {
     align-items: center;
     gap: 16px;
 }
-.acciones a,
-.cuenta {
+.icono {
     position: relative;
     display: flex;
     padding: 8px;
     border-radius: 12px;
-    transition: background-color 0.2s, color 0.2s;
-}
-.acciones a:hover {
-    background-color: rgba(255, 255, 255, 0.18);
-    color: var(--cta);
-}
-.cuenta {
-    background: none;
-    border: none;
-    color: inherit;
-    cursor: default;
 }
 .contador {
     position: absolute;
@@ -442,9 +427,6 @@ svg {
     color: var(--violeta-texto);
 }
 .filtros input {
-    scroll-margin-top: 140px;
-}
-.filtros input {
     flex-shrink: 0;
     width: 22px;
     height: 22px;
@@ -469,9 +451,7 @@ svg {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E");
     border-color: var(--primario);
 }
-.filtros input[type="radio"]:checked,
-.filtros:not(:has(input[name="tipo"]:checked)) .filtro-tipo:target,
-.filtros:not(:has(input[name="tipo"]:checked)):not(:has(.filtro-tipo:target)) #tipo-todos {
+.filtros input[type="radio"]:checked {
     border-color: var(--primario);
     box-shadow: inset 0 0 0 4px var(--tarjeta), inset 0 0 0 11px var(--primario);
 }
@@ -552,39 +532,10 @@ svg {
     font-weight: 400;
 }
 
-/* Filtros sin JavaScript: si hay franquicias marcadas, se ocultan todas
-   y se muestran solo las elegidas */
-.tienda:has(.filtro-franquicia:checked) .producto {
-    display: none;
-}
-.tienda:has(#franquicia-marvel:checked) .producto.marvel,
-.tienda:has(#franquicia-star-wars:checked) .producto.star-wars,
-.tienda:has(#franquicia-dragon-ball:checked) .producto.dragon-ball,
-.tienda:has(#franquicia-pokemon:checked) .producto.pokemon {
-    display: grid;
-}
-/* Tipo de producto: se ocultan los que no coinciden.
-   Aplica cuando se marca el radio o cuando se llega desde un acceso directo
-   (catalogo.html#tipo-figuras) y todavia no se marco ningun tipo. */
-.tienda:has(#tipo-figuras:checked) .producto:not(.figuras),
-.tienda:has(#tipo-coleccionables:checked) .producto:not(.coleccionables),
-.tienda:has(#tipo-sets-lego:checked) .producto:not(.sets-lego),
-.tienda:not(:has(input[name="tipo"]:checked)):has(#tipo-figuras:target) .producto:not(.figuras),
-.tienda:not(:has(input[name="tipo"]:checked)):has(#tipo-coleccionables:target) .producto:not(.coleccionables),
-.tienda:not(:has(input[name="tipo"]:checked)):has(#tipo-sets-lego:target) .producto:not(.sets-lego) {
-    display: none !important;
-}
-/* Paginacion: solo aplica cuando no hay filtros activos */
-.tienda:has(#pagina-1:checked):not(:has(.filtro:checked)):not(:has(.filtro-tipo:target)) .producto:not(.pagina-1),
-.tienda:has(#pagina-2:checked):not(:has(.filtro:checked)):not(:has(.filtro-tipo:target)) .producto:not(.pagina-2),
-.tienda:has(#pagina-3:checked):not(:has(.filtro:checked)):not(:has(.filtro-tipo:target)) .producto:not(.pagina-3),
-.tienda:has(#pagina-1:checked):has(#tipo-todos:checked):not(:has(.filtro-franquicia:checked)) .producto:not(.pagina-1),
-.tienda:has(#pagina-2:checked):has(#tipo-todos:checked):not(:has(.filtro-franquicia:checked)) .producto:not(.pagina-2),
-.tienda:has(#pagina-3:checked):has(#tipo-todos:checked):not(:has(.filtro-franquicia:checked)) .producto:not(.pagina-3) {
-    display: none;
-}
-.tienda:has(.filtro:checked) .paginacion,
-.tienda:has(.filtro-tipo:target):not(:has(#tipo-todos:checked)) .paginacion {
+/* Paginacion: solo se muestran los productos de la pagina elegida */
+.tienda:has(#pagina-1:checked) .producto:not(.pagina-1),
+.tienda:has(#pagina-2:checked) .producto:not(.pagina-2),
+.tienda:has(#pagina-3:checked) .producto:not(.pagina-3) {
     display: none;
 }
 
@@ -637,170 +588,7 @@ svg {
     display: flex !important;
 }
 
-/* ---------- 8. Carrito ---------- */
-.carrito-pagina {
-    display: grid;
-    grid-template-columns: 1fr 360px;
-    align-items: start;
-    gap: 24px;
-    padding-top: 32px;
-}
-.lista-carrito {
-    padding: 8px 32px;
-    background-color: var(--tarjeta);
-    border-radius: var(--radio);
-    box-shadow: var(--sombra);
-}
-.lista-carrito > li + li {
-    border-top: 1px solid var(--borde);
-}
-.item-carrito {
-    display: grid;
-    grid-template-columns: 152px 1fr;
-    align-items: center;
-    gap: 24px;
-    padding: 24px 0;
-}
-.item-carrito:has(.casilla-quitar:checked) {
-    display: none;
-}
-.item-carrito img {
-    width: 152px;
-    height: 152px;
-    object-fit: cover;
-    border-radius: 12px;
-}
-.item-carrito h3 {
-    font-size: 20px;
-}
-.item-carrito-descripcion {
-    margin-bottom: 16px;
-    color: var(--texto-suave);
-    font-size: 14px;
-}
-.item-carrito-fila {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-}
-.item-carrito-precio {
-    min-width: 90px;
-    color: var(--violeta-texto);
-    font-size: 22px;
-}
-.cantidad {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.cantidad button {
-    width: 40px;
-    height: 40px;
-    background-color: var(--cta);
-    color: var(--cta-texto);
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: 600;
-    opacity: 0.75;
-    cursor: pointer;
-    transition: opacity 0.2s, transform 0.2s;
-}
-.cantidad button:hover {
-    opacity: 1;
-    transform: translateY(-2px);
-}
-.cantidad span {
-    min-width: 40px;
-    height: 40px;
-    background-color: var(--tarjeta);
-    border: 1px solid var(--borde);
-    border-radius: 8px;
-    font-weight: 600;
-    line-height: 38px;
-    text-align: center;
-}
-.boton-eliminar {
-    color: var(--etiqueta);
-    font-weight: 600;
-    cursor: pointer;
-    transition: opacity 0.2s;
-}
-.boton-eliminar:hover {
-    text-decoration: underline;
-}
-.casilla-quitar:focus-visible + .boton-eliminar {
-    outline: 2px solid var(--acento);
-    outline-offset: 2px;
-}
-.seguir-comprando {
-    display: inline-block;
-    margin-top: 16px;
-    color: var(--violeta-texto);
-    font-weight: 600;
-}
-.seguir-comprando:hover {
-    text-decoration: underline;
-}
-
-.resumen {
-    position: sticky;
-    top: 112px;
-    padding: 28px 28px 24px;
-    background-color: var(--tarjeta);
-    border-radius: var(--radio);
-    box-shadow: var(--sombra);
-}
-.resumen h2 {
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--borde);
-    font-family: 'inter', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 0;
-    text-transform: uppercase;
-}
-.resumen-fila {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--borde);
-}
-.resumen-fila dt {
-    font-weight: 600;
-    font-size: 18px;
-}
-.resumen-gratis {
-    color: var(--exito);
-    font-weight: 600;
-}
-.resumen-total {
-    border-bottom: none;
-}
-.resumen-total dt {
-    font-size: 22px;
-}
-.resumen-total dd {
-    color: var(--violeta-texto);
-    font-weight: 600;
-    font-size: 26px;
-}
-.resumen .boton-cta {
-    display: block;
-    margin-top: 12px;
-    padding: 14px;
-    font-size: 18px;
-}
-.resumen-nota {
-    margin-top: 12px;
-    color: var(--texto-suave);
-    font-size: 13px;
-    text-align: center;
-}
-
-/* ---------- 9. Pie de pagina ---------- */
+/* ---------- 8. Pie de pagina ---------- */
 .pie {
     margin-top: 56px;
     background-color: var(--pie);
@@ -832,87 +620,4 @@ svg {
     color: var(--texto-suave);
     font-size: 13px;
     text-align: center;
-}
-
-/* ---------- 10. Adaptabilidad ---------- */
-@media (max-width: 1000px) {
-    .encabezado-contenido {
-        flex-wrap: wrap;
-        gap: 12px 24px;
-    }
-    .buscador {
-        order: 4;
-        flex-basis: 100%;
-        max-width: none;
-    }
-    .acciones {
-        margin-left: auto;
-    }
-    .lista-destacados,
-    .lista-productos {
-        grid-template-columns: 1fr;
-    }
-    .lista-categorias {
-        grid-template-columns: 1fr;
-    }
-    .carrito-pagina {
-        grid-template-columns: 1fr;
-    }
-    .resumen {
-        position: static;
-    }
-}
-@media (max-width: 800px) {
-    h1 {
-        font-size: 34px;
-    }
-    .banner {
-        padding: 32px 24px;
-    }
-    .banner h1 {
-        font-size: 40px;
-    }
-    .tienda {
-        grid-template-columns: 1fr;
-    }
-    .filtros {
-        position: static;
-    }
-    .pie-informacion {
-        grid-template-columns: 1fr;
-    }
-}
-@media (max-width: 560px) {
-    .contenedor {
-        padding: 0 16px;
-    }
-    .logo {
-        font-size: 22px;
-    }
-    .producto {
-        grid-template-columns: 110px 1fr;
-        gap: 14px;
-    }
-    .producto-foto img {
-        width: 110px;
-        height: 110px;
-    }
-    .tarjeta-categoria img {
-        width: 110px;
-        height: 110px;
-    }
-    .item-carrito {
-        grid-template-columns: 1fr;
-    }
-    .item-carrito-fila {
-        flex-wrap: wrap;
-    }
-    .lista-carrito {
-        padding: 8px 20px;
-    }
-}
-@media (prefers-reduced-motion: reduce) {
-    * {
-        transition: none !important;
-    }
 }
