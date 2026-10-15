@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" href="estilos/estilos.css">
+    </head>
+    <body>
+        <header>
+            <h1>Diseño adaptable con imagenes</h1>
+        </header>
+        <main>
+            <div class="tarjeta-imagen">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="img/small.svg">
+                    <source media="(max-width: 1200px)" srcset="img/medium.svg">
+                    <img src="img/large.svg">
+                </picture>
+            </div>
+        </main>
+    </body>
+</html>
