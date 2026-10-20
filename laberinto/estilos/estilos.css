@@ -4,30 +4,73 @@
     box-sizing: border-box;
 }
 
-img {
-    display: block;
-    width: auto;
-    height: auto;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.contenedor-laberinto {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin-top: 80px;
+}
+
+.imagen-laberinto {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 .cuadro {
-    width: 50px;
-    height: 50px;
-    background-color: blue; 
-    
+    width: 40px;
+    height: 40px;
+    background-color: blue;
     position: absolute;
 
-    animation-name: moverse;
-    animation-duration: 5s;
-}
-.cuadro:hover {
-    border-radius: 50%;
-    transition: all 0.5s ease;
-
+    animation-name: ciclo;
+    animation-duration: 20s;
+    animation-iteration-count: infinite; 
+    animation-timing-function: linear;
 }
 
-@keyframes moverse {
-    0% {top: 35px; left: 250px;}
-    25% {top: 100px; left: 250px;}
+@keyframes ciclo {
+    0% { border-radius: 0; clip-path: polygon(0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%, 0% 0%, 0% 0%); top: 20px; left: 200px; background-color: blue;} /* inicio cuadrado */
+    3% { border-radius: 50%; top: 20px; left: 200px; } /* inicio circulo */
+
+    5%   { top: 80px;  left: 200px; }/*1*/
+    10%  { top: 80px;  left: 320px; }/*2*/
+    13%  { top: 140px; left: 320px; }/*3*/
+    16%  { top: 140px; left: 260px; }/*4*/
+    21%  { top: 260px; left: 260px; }/*5*/
+    26%  { top: 260px; left: 380px; }/*6*/
+    31%  { top: 380px; left: 380px; }/*7*/
+    36%  { top: 380px; left: 260px; }/*8*/
+    39%  { top: 320px; left: 260px; }/*9*/
+    42%  { top: 320px; left: 200px; }/*10*/
+    45%  { top: 380px; left: 200px; }/*11*/
+    48%  { top: 380px; left: 140px; }/*12*/
+    53%  { top: 260px; left: 140px; } /*13*/
+    56%  { top: 260px; left: 80px; } /*14*/
+    59%  { top: 320px; left: 80px; } /*15*/
+    62%  { border-radius: 50%; clip-path: polygon(0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%, 0% 0%, 0% 0%); top: 320px; left: 20px; 
+        background-color: blue; } /*16 fin del laberinto*/
+
+    63% { border-radius: 0; clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); background-color: #ff0055;
+        transform: rotate(1080deg); top: 320px; left: 20px; } /* inicio de la estrella */
+
+    72% {
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); background-color: #ffcc00; transform: rotate(2160deg); top: 170px; left: 20px;}
+
+    82% { border-radius: 0; clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); background-color: #00ffcc; transform: rotate(3240deg);
+        top: 20px; left: 20px; }
+
+    89% { clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); background-color: #9900ff; transform: rotate(3960deg); 
+        top: 20px; left: 110px; }
     
+    97% { border-radius: 0; clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);  
+        top: 20px; left: 200px;  transform: rotate(4500deg); } /* fin de la estrella */
 
+    100% { border-radius: 0; clip-path: polygon(0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%, 0% 0%, 0% 0%); top: 20px; left: 200px; transform: rotate(4500deg); } /* fin cuadrado */
 }
