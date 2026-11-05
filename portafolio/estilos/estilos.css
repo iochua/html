@@ -28,3 +28,19 @@ body:has(#tema:checked) .site{background:radial-gradient(ellipse at 85% 10%,#392
 @media(max-width:1100px){.header{padding-right:0;padding-top:42px;height:155px}.theme-control{top:20px}.skill-groups{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.header{padding-top:24px;height:auto;min-height:205px}.header nav{margin-top:75px}.language-control{top:90px;left:18px;right:auto}.theme-control{top:101px;right:18px}.profile-grid{grid-template-columns:1fr}.skills-panel{grid-column:auto;order:0}.profile-item:last-child{order:1}.skill-groups{grid-template-columns:1fr;gap:20px}.skill-group h4{font-size:16px}}
 @media print{.theme-control{display:none}:root:has(#tema:checked){--ink:#211b35;--muted:#635d75;--line:#d8d0eb;--accent:#6537de;--card:#fff}body:has(#tema:checked) .site,body:has(#tema:checked) .profile-item,body:has(#tema:checked) .projects-section,body:has(#tema:checked) .certificate,body:has(#tema:checked) .contact-section{background:white}}
+
+/* Retrato profesional de portada. */
+.hero-art.hero-portrait{background:#fff;overflow:hidden}
+.hero-portrait .portrait-photo{display:block;width:100%;height:100%;object-fit:contain;object-position:center bottom}
+.daino-image{background:#fff;display:flex;align-items:center;justify-content:center}.daino-image img{width:100%;height:100%;object-fit:contain}
+
+:root{--nav-height:116px}html{scroll-padding-top:calc(var(--nav-height) + 20px)}.site{padding-top:var(--nav-height)}.header{position:fixed;top:0;left:0;right:0;z-index:20;height:var(--nav-height);background:var(--bg)}.header:before{content:'';position:absolute;inset:0 calc((min(1320px,100vw - 72px) - 100vw)/2);background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 5px 20px #211b3508;z-index:-1}.language-control,.theme-control{position:fixed;z-index:21}
+@media(max-width:1100px){:root{--nav-height:155px}}
+@media(max-width:760px){:root{--nav-height:235px}.header{height:var(--nav-height);min-height:0}.header:before{inset:0 -18px}.header nav{margin-top:75px;gap:8px 18px}}
+@media print{.site{padding-top:0}.header{position:static;height:auto}.header:before{display:none}}
+
+.geek-image{background:#6925df;display:flex;align-items:center;justify-content:center}.geek-image img{width:100%;height:100%;object-fit:contain}
+
+.contact-details>.email-link.primary-contact{display:flex;align-items:center;justify-content:space-between;gap:12px;font:600 clamp(17px,1.9vw,26px)/1.5 var(--heading);padding:0 0 18px;overflow-wrap:anywhere}.contact-details>.contact-phone{font:500 20px/1.5 var(--heading);color:var(--ink);margin:18px 0 0}@media(max-width:760px){.contact-details>.email-link.primary-contact{font-size:17px}.contact-details>.contact-phone{font-size:19px}}
+
+.certificate+.certificate{margin-top:26px}
