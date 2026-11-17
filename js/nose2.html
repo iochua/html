@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Módulo 2: Registro de contactos</title>
+  <!-- >>> NUEVO: una clase CSS para practicar classList -->
+  <style>
+    .resaltado { background: yellow; }
+  </style>
+</head>
+<body>
+  <h1 id="titulo">Registro de contactos</h1>
+
+  <form id="formContacto">
+    <input type="text" name="nombre" placeholder="Nombre">
+    <input type="email" name="email" placeholder="Correo">
+    <input type="number" name="edad" placeholder="Edad">
+    <button type="submit">Guardar</button>
+  </form>
+
+  <p id="mensaje" class="texto">Aquí se mostrará un mensaje.</p>
+  <p id="resumen" class="texto">Aquí se mostrarán los registros.</p>
+
+  <script>
+    // Selección (del módulo 1)
+    const titulo = document.getElementById('titulo');
+    const form = document.getElementById('formContacto');
+    const mensaje = document.getElementById('mensaje');
+    const resumen = document.getElementById('resumen');
+    const campoNombre = form.elements['nombre'];  // un campo por su name
+
+    // >>> NUEVO: leer y modificar
+
+    // Cambiar texto
+    titulo.textContent = 'Registro de contactos (modificado)';
+
+    // Escribir y leer el valor de un campo
+    campoNombre.value = 'Ana';
+    console.log(campoNombre.value);   // Ana
+
+    // Cambiar un atributo
+    campoNombre.setAttribute('placeholder', 'Escribe tu nombre');
+
+    // Clases y estilos
+    mensaje.classList.add('resaltado');   // agrega la clase
+    mensaje.style.color = 'red';     // estilo directo
+
+    // textContent NO interpreta HTML; innerHTML SÍ
+    mensaje.textContent = '<b>Esto se muestra como texto</b>';
+    resumen.innerHTML = '<b>Esto se interpreta como HTML</b>';
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Módulo 3: Registro de contactos</title>
+  <style>
+    .resaltado { background: yellow; }
+  </style>
+</head>
+<body>
+  <h1 id="titulo">Registro de contactos</h1>
+
+  <form id="formContacto">
+    <input type="text" name="nombre" placeholder="Nombre">
+    <input type="email" name="email" placeholder="Correo">
+    <input type="number" name="edad" placeholder="Edad">
+    <button type="submit">Guardar</button>
+    <!-- >>> NUEVO: botón que no envía el formulario -->
+    <button type="button" id="btnLimpiar">Limpiar</button>
+  </form>
+
+  <p id="mensaje" class="texto">Aquí se mostrará un mensaje.</p>
+  <p id="resumen" class="texto">Aquí se mostrarán los registros.</p>
+
+  <script>
+    const form = document.getElementById('formContacto');
+    const mensaje = document.getElementById('mensaje');
+    const campoNombre = form.elements['nombre'];
+    const btnLimpiar = document.getElementById('btnLimpiar');   // NUEVO
+
+    // >>> NUEVO: evento input (se dispara con cada tecla)
+    campoNombre.addEventListener('input', function (e) {
+      mensaje.textContent = 'Escribiendo: ' + e.target.value;
+    });
+
+    // >>> NUEVO: evento click
+    btnLimpiar.addEventListener('click', function () {
+      form.reset();                              // vacía los campos
+      mensaje.textContent = 'Formulario limpio';
+      mensaje.classList.remove('resaltado');
+    });
+
+    // >>> NUEVO: evento submit
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();   // evita que la página se recargue
+      mensaje.textContent = 'Formulario enviado (todavía no se guarda en ningún lado)';
+      mensaje.classList.add('resaltado');
+    });
+  </script>
+</body>
+</html>
