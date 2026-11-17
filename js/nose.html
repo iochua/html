@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Módulo 0: Registro de contactos</title>
+</head>
+<body>
+  <h1 id="titulo">Registro de contactos</h1>
+
+  <form id="formContacto">
+    <input type="text" name="nombre" placeholder="Nombre">
+    <input type="email" name="email" placeholder="Correo">
+    <input type="number" name="edad" placeholder="Edad">
+    <button type="submit">Guardar</button>
+  </form>
+
+  <p id="mensaje" class="texto">Aquí se mostrará un mensaje.</p>
+  <p id="resumen" class="texto">Aquí se mostrarán los registros.</p>
+
+  <!-- IMPORTANTE: el script va al final del body. -->
+  <!-- Si va antes, los elementos todavía no existen y JavaScript no los encuentra. -->
+  <script>
+    // >>> NUEVO: seleccionar elementos y guardarlos en variables
+
+    // Por id: el más usado en formularios
+    const titulo = document.getElementById('titulo');
+    const form = document.getElementById('formContacto');
+    const mensaje = document.getElementById('mensaje');
+
+    // querySelector: el primero que coincida con un selector CSS
+    const primero = document.querySelector('.texto');
+    const campoEmail = document.querySelector('input[name=email]');
+
+    // querySelectorAll: todos los que coincidan (se recorre con forEach)
+    const todos = document.querySelectorAll('.texto');
+
+    // Comprobamos en la consola que cada variable apunta al elemento correcto
+    console.log(titulo);
+    console.log(form);
+    console.log(mensaje);
+    console.log(primero);
+    console.log(campoEmail);
+
+    todos.forEach(function (p, posicion) {
+      console.log(posicion, p.textContent);
+    });
+
+    // Un id que no existe devuelve null (señal de error de escritura)
+    console.log(document.getElementById('noExiste'));
+  </script>
+
+</body>
+</html>
